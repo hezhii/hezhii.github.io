@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+- '6'
+branches:
+  only:
+  - hexo
+cache:
+  directories:
+  - node_modules
+before_install:
+- export TZ='Asia/Shanghai'
+before_script:
+- openssl aes-256-cbc -K $encrypted_e88f11703e7f_key -iv $encrypted_e88f11703e7f_iv -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
+- cp .travis/ssh_config ~/.ssh/config
+- git config --global user.name "biu"
+- git config --global user.email "hezhou920@gmail.com"
+install:
+- npm install hexo-util --save
+- npm install
+script:
+- hexo clean
+- hexo g
+after_success:
+- hexo d

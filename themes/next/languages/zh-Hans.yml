@@ -61,8 +61,8 @@ counter:
 
   archive_posts:
     zero: 暂无日志。
-    one: 目前共计 1 篇日志。
-    other: "目前共计 %d 篇日志。"
+    one: 目前共计 1 篇日志，
+    other: "目前共计 %d 篇日志，"
 
 state:
   posts: 日志
@@ -74,14 +74,14 @@ search:
   placeholder: 搜索...
 
 cheers:
-  um: 嗯..
-  ok: OK
-  nice: 好
-  good: 很好
-  great: 非常好
-  excellent: 太棒了
+  um: 哎呀
+  ok: 还行吧
+  nice: 可以哦
+  good: 不错哟
+  great: 棒棒哒
+  excellent: 超厉害
 
-keep_on: 继续努力。
+keep_on: 小哥哥要一直加油哟😘
 
 symbol:
   comma: '， '

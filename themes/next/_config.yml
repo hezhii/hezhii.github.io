@@ -396,7 +396,7 @@ vkontakte_api:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
+  enable: true
   app_id: 4tpJ87MqbpFnyBs09jyC6Rpi-gzGzoHsz
   app_key: bH4Hy7hHtAfIvFOcTij2My4S
 

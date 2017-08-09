@@ -87,3 +87,69 @@ tags:
       behaviors: [SuperBehavior]
     });
   {% endcodeblock %}
+
+### 事件
+
+1. **listeners**对象中定义了事件及其相应的处理方法。事件监听器可以监听`this.$`集合中的任意元素上的事件，事件类型需要定义为`elementId.eventName`的方式，这也就意味着，这种方式只能为拥有id的节点添加事件监听。
+  {% codeblock lang:html %}
+    <dom-module id="x-custom”> 
+      <template> 
+        <div>I will respond</div>
+          <div>to a tap on</div>
+          <div>any of my children!</div>
+          <div id="special">I am special!</div>
+      </template> 
+    </dom-module>
+    
+    <script> 
+      Polymer({
+        is: 'x-custom’,
+        listeners: {
+           'tap': 'regularTap’,
+           'special.tap': ‘specialTap'
+           },
+        regularTap: function(e) {
+          alert("Thank you for tapping"); 
+         }, 
+        specialTap: function(e) {
+          alert("It was special tapping"); 
+         } 
+      }); 
+    </script>
+  {% endcodeblock %}
+2. 基于上面个的方法，如果不想仅仅为了添加事件而指定元素id，可以通过on-event的方法指定事件。
+3. 通过下面的方法可以绑定或解绑事件。
+  {% codeblock lang:js %}
+    this.listen(this.$.myButton, 'tap', 'onTap');
+    this.unlisten(this.$.myButton, 'tap', 'onTap');
+  {% endcodeblock %}
+4. *fire*方法可以出发一个自定义事件。
+
+## 数据系统
+
+1. **notify**属性控制属性的修改是否会**向上流动**，默认值为`false`，即该属性修改后，不会触发任何东西。不会影响到其他的，**阻止数据出去**。
+2. **readOnly**属性控制属性是否可以**向下流动**，默认值为`false`，即相应数据的修改不会影响到自己，**阻止数据进来**。
+3. `[[]]`阻止数据**向上流动**，即使指定**notify**为`true`。
+4. **注意**：这里的向上、向下流动，不是data和界面之间的流动，而是父组件和子组件。notify和readOnly是对自己的属性而言的，而[[ ]]和{% raw %}{{ }}{% endraw %}相当于是在使用该属性的时候，对使用的那个属性而言。
+
+## 全局配置
+
+1. **dom**:
+    * `shady`，所有的Local DOM都使用shady DOM进行渲染，即使只是shadow DOM(当前默认使用此选项).
+    * `shadow`，Local DOM在支持shadow DOM时使用shadow DOM做渲染(未来会默认使用此选项)。
+2. **lazyRegister**:
+    * `true`，将一些注册时的活动延迟到第一个组件实例被创建时，默认是`false`(默认值将来可能改变)。
+    * `max`，延迟所有行为执行一直到第一个组件被创建。当设置**lazyRegister**为`max`时，不能改变一个组件的`is`属性或通过定义*factoryImpl*方法来创建一个自定义构造函数。Polymer会调用组件的*beforeRegister*用以保留使用ES6定义组件的能力。组件的*beforeRegister*会在特性的*beforeRegister*之前调用.
+3. **useNativeCSSProperties**：为`true`时, Polymer在浏览器支持时使用本地自定义CSS属性。默认是`false`，由于Safari 9还不支持。
+4. **noUrlSettings**：为`true`时, Polymer的设置只能通过页面上脚本来设置，也就是说通过URL查询字符串设置的`?dom=shadow`会被忽略，默认为`false`。
+
+## API
+
+1. **Polymer.CaseMap**：提供两个静态方法，用来完成`-`和驼峰命名之间的互转。`polymer-element <==> polymerElement`
+
+## 特性
+
+1. 支持父子组件双向的数据流，对数据的流动有完全的控制权。
+2. 组件间的样式共享，利用CSS变量，进行组件的样式定制。
+3. 修改了对象的getter、setter，当对象的属性发生变化的时候，调用set方法设置属性并调用监听该属性变化的方法。
+4. behavior的作用和vue中的mixin类似，提供一些通用的处理。

@@ -41,6 +41,21 @@ deploy:
 ```
 
 这样就能同时将博客内容推到GitHub和Coding上。在Coding上选择`项目-->代码-->Pages 服务`，然后选择相应的分支即可完成部署。这样，通过`<username>.github.io`和`<username>.coding.me`就都能访问到博客了。
+这里有一个问题需要注意，如果使用了Travis CI进行自动部署并且是SSH方式登陆的，需要在ssh_config文件中添加上Coding相关配置，ssh_config中的内容如下所示。
+
+```
+Host github.com
+User git
+StrictHostKeyChecking no
+IdentityFile ~/.ssh/id_rsa
+IdentitiesOnly yes
+
+Host git.coding.net
+User git
+StrictHostKeyChecking no
+IdentityFile ~/.ssh/id_rsa
+IdentitiesOnly yes
+```
 
 ### 域名申请并解析
 

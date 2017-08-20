@@ -9,5 +9,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://hezhii.github.io/sitemap.xml
-Sitemap: https://hezhii.github.io/baidusitemap.xml
+Sitemap: http://www.whezh.com/sitemap.xml
+Sitemap: http://www.whezh.com/baidusitemap.xml

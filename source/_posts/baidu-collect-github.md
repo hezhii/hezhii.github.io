@@ -1,8 +1,9 @@
 ---
 title: 解决博客搭建在GitHub上无法被百度收录的问题
 tags:
-  - Baidu Spider
-  - GitHub Pages
+  - SEO
+  - GitHub
+  - Coding
 categories:
   - 我走过的路
 date: 2017-08-13 23:31:40

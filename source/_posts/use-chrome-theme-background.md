@@ -6,7 +6,7 @@ categories:
 tags:
   - Hexo
   - NexT
-  - Background
+  - CSS
   - Chrome
 ---
 今天打开Chrome，看到首页上那炫酷的主题背景，突然想到我博客好像还没有背景，这着实让人觉得不开心。于是，趁着中午休息的时间，我决定给博客也添加一个背景。

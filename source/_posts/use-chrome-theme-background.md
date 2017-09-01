@@ -5,7 +5,6 @@ categories:
   - 我走过的路
 tags:
   - Hexo
-  - NexT
   - CSS
   - Chrome
 ---

@@ -9,11 +9,15 @@ tags:
   - React
 ---
 
+这篇文章是我在学习 React 的过程中记录下的笔记，学习主要是跟着官网的文档了解 React 的一些基本用法。我记录下了在这个过程中我遇到过的问题以及我觉得重要的地方。
+
+<!-- more -->
+
+<img src="/images/react.png" class="full-image" alt="React" title="React"/>
+
 ## 安装
 
 通过引入脚本文件的方式安装时，需要先引入 React，再引入 ReactDOM。
-
-<!-- more -->
 
 ## JSX
 

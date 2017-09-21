@@ -2,10 +2,10 @@
 title: ThinkJS 3.0
 date: 2017-08-30 17:54:51
 categories:
-  - 学无止境
+  - 新技能 Get
 tags:
   - Node.js
-  - Framework
+  - ThinkJS
 ---
 
 ## 概述

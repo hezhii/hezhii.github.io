@@ -2,7 +2,7 @@
 title: 跨域 POST 请求之 CROS
 date: 2017-09-16 20:00:57
 categories:
-  - 我走过的路
+  - 航海日志
 tags:
   - CROS
 ---

@@ -2,7 +2,7 @@
 title: 博客搭建过程
 date: 2017-08-07 23:02:01
 categories:
-- 我走过的路
+- 航海日志
 tags:
 - GitHub
 - Hexo

@@ -2,7 +2,7 @@
 title: 博客中使用Chrome主题中的背景图片
 date: 2017-08-22 20:35:33
 categories:
-  - 我走过的路
+  - 航海日志
 tags:
   - Hexo
   - CSS

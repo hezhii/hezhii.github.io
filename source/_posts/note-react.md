@@ -2,10 +2,9 @@
 title: React 学习笔记
 date: 2017-09-06 19:20:06
 categories:
-  - 学无止境
+  - 新技能 Get
 tags:
   - Frontend
-  - Framework
   - React
 ---
 

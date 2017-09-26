@@ -32,3 +32,11 @@ Office 直接安装即可。安装完成后，打开破解程序，打开时会�
 下载完成后直接安装，安装成功后打开程序，在程序激活页面选择 Server License，填入下面的地址即可激活。
 
 > http://idea.imsxm.com/
+
+## Navivat Premium
+
+Navivat Premium 是一套相当好用的数据库开发工具，使用这一个程序就可以连接多种常见数据库。但是，软件本身是需要收费的并且价格不便宜。
+
+当时在安装破解版的时候花了很多时间，网上的资源好多都不能用，最后终于找到了一个破解版，下载安装后即可使用。
+
+链接: [http://pan.baidu.com/s/1eRG9LPS](http://pan.baidu.com/s/1eRG9LPS)  密码:f5cc

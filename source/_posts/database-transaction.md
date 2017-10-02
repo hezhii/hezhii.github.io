@@ -2,7 +2,7 @@
 title: 数据库事务及锁机制
 date: 2017-09-21 23:41:26
 categories:
-  - 补钙
+  - 学无止境
 tags:
   - Database
   - Concurrency

@@ -2,7 +2,7 @@
 title: 如何在WebStorm中使用Git Submodule
 date: 2017-08-20 17:30:47
 categories:
-  - 奥义！大猿王枪
+  - 学以致用
 tags:
   - Git
   - WebStorm

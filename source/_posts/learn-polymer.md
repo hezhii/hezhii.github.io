@@ -2,7 +2,7 @@
 title: Polymer 2.0
 date: 2017-08-08 23:05:20
 categories:
-  - 新技能 Get
+  - 学无止境
 tags:
   - Polymer
   - Frontend

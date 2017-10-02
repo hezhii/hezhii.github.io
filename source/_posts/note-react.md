@@ -2,7 +2,7 @@
 title: React 学习笔记
 date: 2017-09-06 19:20:06
 categories:
-  - 新技能 Get
+  - 学无止境
 tags:
   - Frontend
   - React

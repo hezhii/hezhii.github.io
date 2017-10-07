@@ -15,10 +15,44 @@ tags:
 
 ## 简单介绍
 
-Seqeulize 是 Node.js 上的一个 ORM 框架。根据官网上的介绍，她支持多种数据库、支持原生 SQL、事务、关联关系、读复制等功能。
+> Sequelize is a promise-based ORM for Node.js v4 and up. It supports the dialects PostgreSQL, MySQL, SQLite and MSSQL and features solid transaction support, relations, read replication and more.
 
-Sequelize 使用简单，有十分详细的官方文档，在 GitHub上也有一个 [express-example](https://github.com/sequelize/express-example) 说明在 Express 中的基本使用方法。她基于 Promise，因此可以很方便的进行异步处理，直接 catch 住异常。
+Seqeulize 是 Node.js 上的一个 ORM 框架。根据官网上的介绍，她支持多种数据库、支持写原生 SQL、事务、关联关系、读复制等功能。
+
+Sequelize 使用简单，有十分详细的官方文档，在 GitHub上也有一个 [express-example](https://github.com/sequelize/express-example) 说明在 Express 中的基本使用方法。她基于 Promise，因此可以很方便的进行异步处理。
 
 ## 基本用法
 
-## 事务
+Sequelize 的用法在官网上有很详细的介绍，这里只记录下比较常用的几点基本用法。
+
+### 安装
+
+直接通过 NPM 或者 Yarn 安装即可，需要同时安装相应数据库连接的驱动。
+
+```bash
+   // Using NPM
+   $ npm install --save sequelize
+
+   # And one of the following:
+   $ npm install --save pg pg-hstore
+   $ npm install --save mysql2
+   $ npm install --save sqlite3
+   $ npm install --save tedious // MSSQL
+
+   // Using Yarn
+   $ yarn add sequelize
+
+   # And one of the following:
+   $ yarn add pg pg-hstore
+   $ yarn add mysql2
+   $ yarn add sqlite3
+   $ yarn add tedious // MSSQL
+```
+
+### 建立连接
+
+### 定义模型
+
+### CURD
+
+### 事务

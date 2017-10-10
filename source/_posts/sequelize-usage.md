@@ -2,11 +2,12 @@
 title: Sequelize 基本用法
 date: 2017-10-02 12:57:15
 categories:
-  - 学以致用
+  - 技术
 tags:
   - ORM
   - Sequelize
   - Node.js
+  - 数据库
 ---
 
 最近在工作中开始写 Node.js 应用，数据库使用的 PostgreSQL，为了方便数据库操作打算使用一款 ORM 框架。在 GitHub 上找到了 [node-orm2](https://github.com/dresende/node-orm2) 和 [sequelize](https://github.com/sequelize/sequelize) 两款，最终因为 star 数和更加全面的文档选择了 sequelize。现通过这篇博客记录下 sequelize 的一些基本用法。

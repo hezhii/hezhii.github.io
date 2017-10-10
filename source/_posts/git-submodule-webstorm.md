@@ -2,7 +2,7 @@
 title: 如何在WebStorm中使用Git Submodule
 date: 2017-08-20 17:30:47
 categories:
-  - 学以致用
+  - 技术
 tags:
   - Git
   - WebStorm

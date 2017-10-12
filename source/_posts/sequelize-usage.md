@@ -221,3 +221,37 @@ User.findAndCount({
 ```
 
 ### 事务
+
+在 **Seqeulize** 中使用事务主要通过对象实例的 *transaction* 方法。该方法会创建一个 **Transaction** 对象实例，接着在执行数据库操作时指定 transaction 参数为该实例，这样就可以在事务下进行数据库操作。当事务完成后，通过 *commit* 方法提交事务，通过 *rollback* 方法回滚。例如：
+
+```javascript
+sequelize.transaction({
+  isolationLevel: Sequelize.Transaction.ISOLATION_LEVELS.READ_COMMITTED
+}, transaction => {
+  return User.findOne({
+    where: {
+      name: '小明'
+    },
+    transaction: t
+  }).then(function(model) {
+    if (model) {
+      model.age = model.age + 1;
+      return model.save({
+        transaction: t
+      });
+    }
+  });
+}).then(result => {
+  // transaction has been committed. Do something after the commit if required.
+}).catch(err => {
+  // do something with the err.
+});
+```
+
+创建事务时可以通过 isolationLevel 参数指定事务的隔离级别，默认级别是 **REPEATABLE_READ**。
+
+给 *sequelize.transaction* 方法指定**回调函数**可以将事务托管给 Sequelize，它会自动提交和回滚事务（例如上面的例子）。如果不使用回调函数的写法，而是使用 `promise.then()`，则需要手动调用 `t.commit()` 提交事务，`t.callback()` 回滚事务。
+
+## 总结
+
+目前，我也只是使用了 **Sequelize** 的一些基本功能，并不涉及到复杂的操作，不太适合过多的进行评价，给我的感觉还是相当不错的，简单、好用。

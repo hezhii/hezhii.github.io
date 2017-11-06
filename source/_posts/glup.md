@@ -123,7 +123,7 @@ gulp.task('test', () => _exec('npm test'));
  */
 gulp.task('coverage', ['test'], () => _exec('npm run coverage'));
 
-async function _exec (command, args = [], options = {shell: true, stdio: 'inherit'}) {
+function _exec (command, args = [], options = {shell: true, stdio: 'inherit'}) {
   return new Promise((resolve, reject) => spawn(normalize(command), args, options)
     .on('close', code => code ? reject(new Error(`${command}: ${code}`)) : resolve())
   );

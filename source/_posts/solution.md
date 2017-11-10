@@ -15,3 +15,12 @@ tags:
 ### Error with code: EINTEGRITY
 
 通过 `npm install` 安装依赖时出现上述错误代码，百度说通过 `npm cache clean --force` 清除缓存，但是这对我来说没有作用。最后，Google 到 npm 的 issues，删除 `package-lock.json` 解决了该问题。
+
+
+## WebStorm
+
+### 在 Webpack 中配置别名后，WebStorm 出现文件找不到的提示
+
+**WebStorm 2017.2 EAP, 172.2827** 版本已经支持，它会自动解析项目根目录下的 Webpack 配置文件，在 `Preferences/Languages & Frameworks/JavaScript/Webpack` 中可以指定配置文件。
+
+参考：https://blog.jetbrains.com/webstorm/2017/06/webstorm-2017-2-eap-172-2827/

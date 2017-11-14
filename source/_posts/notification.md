@@ -19,7 +19,7 @@ tags:
 
 当我选择允许后，过一会儿从电脑的右侧弹出了一个提示框，如下图所示。
 
-<div align="center"><img src="/images/youku_notification.png" width="400" alt="优酷通知" title="优酷通知"></div>
+<div align="center"><img src="/images/youku_notification.jpg" width="400" alt="优酷通知" title="优酷通知"></div>
 
 当时觉得很有意思，便上网查询了一下相关的资料，了解到是HTML5的新API——Notification。于是，本着学习的想法，弄了一个小的demo。
 
@@ -70,7 +70,7 @@ Notification主要包含一个静态属性和若干个实例属性，实例属�
 
 选择允许后，一会就会收到通知了，如下图所示。
 
-<div align="center"><img src="/images/notification.png" width="400" alt="通知" title="通知"></div>
+<div align="center"><img src="/images/notification.jpg" width="400" alt="通知" title="通知"></div>
 
 此时，刷新或者关闭浏览器，通知仍然会显示。点击通知，可以产生一些交互效果。
 至此，关于HTML5 Notification的介绍和简单使用就完结了。

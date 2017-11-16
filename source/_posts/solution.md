@@ -57,3 +57,14 @@ if (module.hot) {
 
 render(App);
 ```
+
+### 使用 Eslint 时出现变量未使用的错误
+
+安装 [`eslint-plugin-eact`](https://www.npmjs.com/package/eslint-plugin-react) 插件，配置 `extends` 属性如下：
+
+```json
+"extends": [
+    "standard",
+    "plugin:react/recommended"
+  ]
+```

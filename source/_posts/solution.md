@@ -16,7 +16,6 @@ tags:
 
 通过 `npm install` 安装依赖时出现上述错误代码，百度说通过 `npm cache clean --force` 清除缓存，但是这对我来说没有作用。最后，Google 到 npm 的 issues，删除 `package-lock.json` 解决了该问题。
 
-
 ## WebStorm
 
 ### 在 Webpack 中配置别名后，WebStorm 出现文件找不到的提示
@@ -24,3 +23,37 @@ tags:
 **WebStorm 2017.2 EAP, 172.2827** 版本已经支持，它会自动解析项目根目录下的 Webpack 配置文件，在 `Preferences/Languages & Frameworks/JavaScript/Webpack` 中可以指定配置文件。
 
 参考：https://blog.jetbrains.com/webstorm/2017/06/webstorm-2017-2-eap-172-2827/
+
+## React
+
+### 热模块替换失效
+
+原因：我在导入 `containers/App/App.js` 时导入了全部的 `containers`。
+
+解决办法：在导入时只导入 App 组件即可。如下面代码所示：
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {AppContainer} from 'react-hot-loader';
+
+// import {App} from 'containers';
+import App from 'containers/App/App';
+
+const render = (RootElement) => {
+  ReactDOM.render(
+    <AppContainer>
+      <RootElement/>
+    </AppContainer>
+    , document.getElementById('root'));
+};
+
+if (module.hot) {
+  module.hot.accept('containers/App/App', () => {
+    const App = require('containers/App/App').default;
+    render(App);
+  });
+}
+
+render(App);
+```

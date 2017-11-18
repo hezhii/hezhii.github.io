@@ -3,9 +3,9 @@ title: Polymer 2.0
 date: 2017-08-08 23:05:20
 categories:
   - 技术
+  - 前端
 tags:
   - Polymer
-  - 前端
 ---
 {% blockquote %}
 **Unlock the Power of Web Components**. Polymer is a JavaScript library that helps you create custom reusable HTML elements, and use them to build performant, maintainable apps.

@@ -1,13 +1,13 @@
 ---
 title: Node.js 单元测试
 tags:
-  - Node.js
   - Mocha
   - Chai
   - Sinon
   - Istanbul
 categories:
   - 技术
+  - Node.js
 date: 2017-10-16 22:10:19
 ---
 

@@ -3,8 +3,8 @@ title: HTML5 Notification
 date: 2017-08-09 22:40:19
 categories:
   - 技术
-tags:
   - 前端
+tags:
   - HTML5
 ---
 >The Notifications API allows web pages to control the display of system notifications to the end user. These are outside the top-level browsing context viewport, so therefore can be displayed even when the user has switched tabs or moved to a different app. The API is designed to be compatible with existing notification systems, across different platforms.

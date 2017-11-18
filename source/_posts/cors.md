@@ -3,8 +3,8 @@ title: 跨域 POST 请求之 CROS
 date: 2017-09-16 20:00:57
 categories:
   - 技术
+  - Web 通信
 tags:
-  - 前端
   - CROS
 ---
 

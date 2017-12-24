@@ -4,7 +4,7 @@
 
 ~~个人博客的源码，由[hexo](https://hexo.io/)强力驱动，使用[NexT](http://theme-next.iissnan.com/)主题，[Travis CI](https://travis-ci.org/)自动部署到GitHub Pages。~~
 
-**博客已迁移到阿里云服务器，基于 Ghost 构建**。
+**博客已迁移到阿里云服务器，基于 Ghost 构建**。http://blog.whezh.com
 
 ## 为什么要写博客
 

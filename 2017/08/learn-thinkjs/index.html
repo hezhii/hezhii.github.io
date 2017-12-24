@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="GRzJXwkmGRGz6yOrEZCiLsyf5A3LNQtTug69C2sDe_Y" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="LxjBAY2T0t" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Hiragino Sans GB:300,300italic,400,400italic,700,700italic|zapfino:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ThinkJS," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="He Zhou's Personal Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="概述ThinkJS 是一款面向未来开发的 Node.js 框架，底层基于 Koa 2.x 实现，内核小巧、性能优异，内置自动编译、自动更新机制，使用更优雅的 async/await 处理异步问题，兼容中间件并提供了扩展和适配器等插件方式。针对企业级应用开发，使开发变得更加简单、高效。">
+<meta name="keywords" content="ThinkJS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ThinkJS 3.0">
+<meta property="og:url" content="http://www.whezh.com/2017/08/learn-thinkjs/index.html">
+<meta property="og:site_name" content="He Zhou&#39;s Personal Blog">
+<meta property="og:description" content="概述ThinkJS 是一款面向未来开发的 Node.js 框架，底层基于 Koa 2.x 实现，内核小巧、性能优异，内置自动编译、自动更新机制，使用更优雅的 async/await 处理异步问题，兼容中间件并提供了扩展和适配器等插件方式。针对企业级应用开发，使开发变得更加简单、高效。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.whezh.com/images/thinkjs_framework.jpg">
+<meta property="og:image" content="http://www.whezh.com/images/thinkjs_workflow.png">
+<meta property="og:updated_time" content="2017-12-24T13:06:04.092Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ThinkJS 3.0">
+<meta name="twitter:description" content="概述ThinkJS 是一款面向未来开发的 Node.js 框架，底层基于 Koa 2.x 实现，内核小巧、性能优异，内置自动编译、自动更新机制，使用更优雅的 async/await 处理异步问题，兼容中间件并提供了扩展和适配器等插件方式。针对企业级应用开发，使开发变得更加简单、高效。">
+<meta name="twitter:image" content="http://www.whezh.com/images/thinkjs_framework.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.whezh.com/2017/08/learn-thinkjs/"/>
+
+
+
+
+
+  <title>ThinkJS 3.0 | He Zhou's Personal Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a8717372d181904534e317776846f9df";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">He Zhou's Personal Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.whezh.com/2017/08/learn-thinkjs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="He Zhou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="He Zhou's Personal Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">ThinkJS 3.0</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-30T17:54:51+08:00">
+                2017-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/Node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/08/learn-thinkjs/" class="leancloud_visitors" data-flag-title="ThinkJS 3.0">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>ThinkJS 是一款面向未来开发的 Node.js 框架，底层基于 Koa 2.x 实现，内核小巧、性能优异，内置自动编译、自动更新机制，使用更优雅的 async/await 处理异步问题，兼容中间件并提供了扩展和适配器等插件方式。针对企业级应用开发，使开发变得更加简单、高效。</p>
+<a id="more"></a>
+<h2 id="个人见解"><a href="#个人见解" class="headerlink" title="个人见解"></a>个人见解</h2><p>这一节内容是我在学习完 ThinkJS 基本用法后加上的，主要谈谈关于 ThinkJS 的一些个人见解。</p>
+<p>这里不得不引用官方文档中的架构图。</p>
+<p><img src="/images/thinkjs_framework.jpg" alt="ThinkJS 架构图"></p>
+<p>从架构图我们可以清晰的看到 ThinkJS 底层是基于 Koa 2.x，主要分为中间件、扩展和适配器三个核心模块。其中中间件主要用来处理用户的请求，当用户向服务器发出请求时，顺序执行中间件，最终返回用户期望的结果。扩展和适配器往往搭配使用，提供一些诸如：Session、模板引擎、数据库模型等扩展功能。</p>
+<p>在我看来，ThinkJS 其实就是对一个应用如何构建进行了划分，将一个应用分成了各个模块（中间件、扩展），各个模块各司其职，处理自己的逻辑。我们只需要将相应的逻辑写在相应的地方，然后进行相应的一些配置。在应用启动时，ThinkJS 根据配置文件装载相应的模块，当用户请求到达时，按照配置将处理权交给相应的模块，完成请求的响应。整个应用都是可配置的，大大增强了灵活性。</p>
+<p>ThinkJS 的工作模式按照官方文档上的说法主要分为两个部分，一个是系统服务启动，另一个是用户请求处理。这一点我感觉没有什么特殊的地方，我觉得所有的后台应用都是这两个部分，都是需要启动服务监听端口，然后等待客户端的请求到来，处理请求并响应。只不过在这两个阶段进行的具体工作有些许差异罢了。ThinkJS 在系统服务启动阶段，除了启动服务监听端口外，最主要的工作就是装配。按照 ThinkJS 的架构，我们需要什么功能或者需要执行什么操作，只需要将相应的代码写在相应的地方，然后添加响应的配置。为什么我们这样做了就可以实现我们需要的功能？必然是 ThinkJS 在启动时进行了装配。</p>
+<p>我们以在 ThinkJS 中添加模板页面功能为例，来梳理一下 ThinkJS 扩展和适配器机制以及系统服务启动。扩展功能在我理解就是在相应的环境（全局、上下文或者控制器）下添加了一个对象，我们可以直接使用它提供的一些方法，来实现相应的功能。按照 ThinkJS 的架构，我们需要先实现这个对象（扩展）或者直接使用别人的，这个对象至少有一个 <code>render</code> 方法，能将模板文件渲染成 html 文件。然后，在配置文件 <code>src/config/extend.js</code> 中我们需要引入这个对象并添加这个对象的配置。接着，我们还需要在适配器中添加一个具体的模板引擎配置。完成这几步后，我们就可以直接在控制器中通过 <code>this.render()</code> 渲染模板页面了。那么为什么经过这样的几个步骤后，就可以使用模板页面了呢？我们可以在控制器中直接使用 <code>this.render()</code>，肯定是 ThinkJS 在控制器对象上添加了这个方法，添加这个方法的依据应该就是我们在扩展配置文件中添加了 <code>view</code> 配置，而我们执行这个方法具体的实现则是根据适配器中的配置来的。扩展相当于定义了一个功能接口，而适配器中进行具体的实现。服务启动后，读取扩展配置，装配相应的对象（扩展功能）。在具体使用该功能时，根据适配器中的配置，不同的类型有不同的实现。</p>
+<p>后台应用的核心主要还是处理用户请求，处理用户请求主要通过各种中间件来完成。通过中间件，将处理请求的流程截取成了多个部分，各个中间件完成各自的功能，整个处理过程类似于一个流水线生产。扩展也是为这一过程服务的，定义的扩展功能可以在请求处理的过程中调用，去完成更加具体的工作。我觉得扩展是作为中间件的一部分存在的，去实现中间件中的某一个具体功能。请求处理流程大致如下图所示。</p>
+<p><img src="/images/thinkjs_workflow.png" alt="ThinkJS 请求处理流程"></p>
+<p>各种中间件分别对 <code>request</code> 进行加工，然后由路由分配给指定的控制器去处理，在控制器处理之前 ThinkJS 中会先经过一个叫做 <strong>Logic</strong> 的中间件，对数据进行验证、过滤。控制器在处理请求时，可以随时调用扩展功能去实现某个具体的操作，接口都是统一的，由适配器去完成各种不同的实现。最后，将响应结果返回给客户端。</p>
+<p>那么，使用 ThinkJS 能带来什么好处呢？首先，应用如何启动我们不需要花费太多的精力，通过配置文件以及 worker 即可完成。其次，对于请求处理，通过中间件、扩展和适配器以及相应的配置，我们可以很快速的添加相应的处理逻辑。同时，还可以保证一个良好的代码结构。最后，ThinkJS 提供了很多通用的机制，去解决一些通用问题，例如：日志、数据模型、Cookie、错误处理等。</p>
+<p>总之，就目前的了解来看，ThinkJS 最优秀的地方在于它很简单，可以快速的上手。只要按照它的架构，就能很轻松的构建出整个应用。框架本身并不算复杂，但通过一些内部机制又可以增添很多丰富的功能。内置的一些功能模块也解决的了很多通用的问题。更具体的优缺点还得待具体使用后才知道。</p>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><p>ThinkJS提供了脚手架工具，可以帮助我们快速创建一个项目，要求 Node.js 的版本大于 <code>6.x</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g think-cli</span><br><span class="line">$ thinkjs new &lt;project-name&gt;</span><br></pre></td></tr></table></figure>
+<p>执行完上述命令后，就可以创建出一个项目骨架。进入该项目，安装依赖后可直接启动。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> &lt;project-name&gt;</span><br><span class="line">$ npm install</span><br><span class="line">$ npm start</span><br></pre></td></tr></table></figure>
+<p>启动后，访问 <code>http://127.0.0.1:8360</code> 可以看到初始化页面。</p>
+<p>通过脚手架构建的项目目录结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">|--- development.js   //开发环境下的入口文件</span><br><span class="line">|--- nginx.conf  //nginx 配置文件</span><br><span class="line">|--- package.json</span><br><span class="line">|--- pm2.json //pm2 配置文件</span><br><span class="line">|--- production.js //生产环境下的入口文件</span><br><span class="line">|--- README.md</span><br><span class="line">|--- src</span><br><span class="line">| |--- bootstrap  //启动自动执行目录</span><br><span class="line">| | |--- master.js //Master 进程下自动执行</span><br><span class="line">| | |--- worker.js //Worker 进程下自动执行</span><br><span class="line">| |--- config  //配置文件目录</span><br><span class="line">| | |--- adapter.js  // adapter 配置文件</span><br><span class="line">| | |--- config.js  // 默认配置文件</span><br><span class="line">| | |--- config.production.js  //生产环境下的默认配置文件，和 config.js 合并</span><br><span class="line">| | |--- extend.js  //extend 配置文件</span><br><span class="line">| | |--- middleware.js //middleware 配置文件</span><br><span class="line">| | |--- router.js //自定义路由配置文件</span><br><span class="line">| |--- controller  //控制器目录</span><br><span class="line">| | |--- base.js</span><br><span class="line">| | |--- index.js</span><br><span class="line">| |--- logic //logic 目录</span><br><span class="line">| | |--- index.js</span><br><span class="line">| |--- model //模型目录</span><br><span class="line">| | |--- index.js</span><br><span class="line">|--- view  //模板目录</span><br><span class="line">| |--- index_index.html</span><br><span class="line">|--- www</span><br><span class="line">| |--- static  //静态资源目录</span><br><span class="line">| | |--- css</span><br><span class="line">| | |--- img</span><br><span class="line">| | |--- js</span><br></pre></td></tr></table></figure>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>关于ThinkJS的基本用法主要是参考了官方文档的内容，根据文档说明依次尝试了相应的模块并记录下核心的内容。</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>所有的配置文件都放在 <code>src/config/</code> 目录下，根据不同的功能划分为不同的配置文件。其中，通用配置和适配器配置支持在不同的环境下配置不同的值，只需要将配置文件命令为 <code>[name].[env].js</code> 这种形式即可。例如：<code>config.production.js</code> 表明这是生产环境中的配置，该文件中的 key 会覆盖 <code>config.js</code> 中同名的 key。运行环境在实例化 Application 对象时通过 <code>env</code> 参数指定，如下所示。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> instance = <span class="keyword">new</span> Application(&#123;</span><br><span class="line">  ROOT_PATH: __dirname,</span><br><span class="line">  proxy: <span class="literal">true</span>, <span class="comment">// use proxy</span></span><br><span class="line">  env: <span class="string">'production'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>在程序运行时可以获取和动态设置配置，获取配置可以通过上下文、controller 和全局的 think 对象，动态设置只能通过 think。下面是获取和设置配置的例子。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// HTTP 服务启动前执行</span></span><br><span class="line">think.beforeStartServer(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`全局环境下读取端口号配置: <span class="subst">$&#123;think.config(<span class="string">'port'</span>)&#125;</span>`</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'动态配置端口号为: 8088'</span>);</span><br><span class="line">  think.config(<span class="string">'port'</span>, <span class="string">'8088'</span>); <span class="comment">// 动态配置端口号。</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>通过 <code>DEBUG=think-loader-config-* npm start</code> 命令来启动项目可以在控制台查看配置文件的详细加载情况。</p>
+<h3 id="上下文"><a href="#上下文" class="headerlink" title="上下文"></a>上下文</h3><blockquote>
+<p>Context 是 Koa 中处理用户请求中的一个对象，贯穿整个请求生命周期。一般在 middleware、controller、logic 中使用，简称为 ctx。</p>
+</blockquote>
+<p>Context 中包含了许多信息以及一些便捷操作，下面列举部分，详情见 <a href="https://thinkjs.org/zh-cn/doc/3.0/context.html" target="_blank" rel="noopener">ThinkJS 文档</a></p>
+<ul>
+<li>可以通过上下文获取 request 和 response 对象。</li>
+<li>可以过ctx.state在中间件中传递信息，而不是直接添加到 ctx 上。</li>
+<li>ctx.throw 抛出包含 <code>.status</code> 属性的异常，默认状态码为 500。</li>
+<li>ctx.json 输出 JSON 格式数据。</li>
+<li>ctx.success 和 ctx.fail 输出成功和失败数据。</li>
+<li>ctx.confg 读取配置。</li>
+</ul>
+<h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><p>ThinkJS 中通过统一的配置文件来管理中间件，配置文件为 <code>src/config/middleware.js</code>。中间件分为框架内置中间件和项目自定义中间件两种。内置的中间件可以通过字符串的方式直接引用，内置中间件有下面这些：</p>
+<ul>
+<li>meta 显示一些 meta 信息，如：发送 ThinkJS 的版本号，接口的处理时间等等。</li>
+<li>resource 处理静态资源，生产环境建议关闭，直接用 webserver 处理即可。</li>
+<li>trace 处理报错，开发环境将详细的报错信息显示处理，也可以自定义显示错误页面。</li>
+<li>payload 处理表单提交和文件上传，类似于 koa-bodyparser 等 middleware。</li>
+<li>router 路由解析，包含自定义路由解析。</li>
+<li>logic logic 调用，数据校验。</li>
+<li>controller controller 和 action 调用。</li>
+</ul>
+<p>项目自定义的中间件定义在 <code>src/middleware</code> 目录下，然后也可以通过字符串的方式引用。下面是一个计算当前请求执行时间的中间件的例子。</p>
+<p>首先在 <code>src/middleware</code> 目录下新建一个 <code>compute-request-time.js</code> 的文件，文件中写下如下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> defaultOptions = &#123;</span><br><span class="line">  consoleExecTime: <span class="literal">false</span> <span class="comment">// 是否打印执行时间的配置</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">options = &#123;&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 合并传递进来的配置</span></span><br><span class="line">  options = <span class="built_in">Object</span>.assign(&#123;&#125;, defaultOptions, options);</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">ctx, next</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!options.consoleExecTime) &#123;</span><br><span class="line">      <span class="keyword">return</span> next(); <span class="comment">// 如果不需要打印执行时间，直接调用后续执行逻辑</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> startTime = <span class="built_in">Date</span>.now();</span><br><span class="line">    <span class="keyword">let</span> err = <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">// 调用 next 统计后续执行逻辑的所有时间</span></span><br><span class="line">    <span class="keyword">return</span> next().catch(<span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">      err = e; <span class="comment">// 这里先将错误保存在一个错误对象上，方便统计出错情况下的执行时间</span></span><br><span class="line">    &#125;).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> endTime = <span class="built_in">Date</span>.now();</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">`request exec time: <span class="subst">$&#123;endTime - startTime&#125;</span>ms`</span>);</span><br><span class="line">      <span class="keyword">if</span> (err) <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err); <span class="comment">// 如果后续执行逻辑有错误，则将错误返回</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接着在配置文件 <code>src/config/middleware.js</code> 中增加如下配置：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = [&#123;</span><br><span class="line">  handle: <span class="string">'compute-request-time'</span>,</span><br><span class="line">  enable: think.env === <span class="string">'development'</span>,  <span class="comment">// 这个中间件只在开发环境下生效</span></span><br><span class="line">  options: &#123;</span><br><span class="line">    consoleExecTime: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  match: <span class="string">'/'</span>  <span class="comment">// 请求的 URL 是 / 打头时这个中间件才启用</span></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p>参数及含义如下：</p>
+<ul>
+<li>handle 中间件的处理函数。</li>
+<li>enable 是否启用中间件。</li>
+<li>options 传递给中间件的参数，是一个对象，可以通过函数返回。</li>
+<li>match 匹配特定的规则后才执行该中间件，支持二种方式，一种是路径匹配，一种是自定义函数匹配。</li>
+</ul>
+<p><strong>注意</strong>：</p>
+<ol>
+<li>如果中间件没有定义在 <code>src/middleware/</code> 目录下，在配置文件中配置时需要引入。</li>
+<li>中间件的执行顺序是配置文件中的顺序。</li>
+</ol>
+<h3 id="Logic"><a href="#Logic" class="headerlink" title="Logic"></a>Logic</h3><p>Logic 层在 Controller 之前执行，主要是完成一些过滤、数据校验、权限判断等一些逻辑性不是特别强但又和业务逻辑相关的工作，降低 Action 中代码的复杂程度。Logic 里的 Action 和控制器里的 Action 一一对应，系统在调用控制器里的 Action 之前会自动调用 Logic 里的 Action。</p>
+<p>Logic 代码类似如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">think</span>.<span class="title">Logic</span> </span>&#123;</span><br><span class="line"> __before() &#123;</span><br><span class="line">    <span class="comment">// todo</span></span><br><span class="line"> &#125;</span><br><span class="line"> indexAction() &#123;</span><br><span class="line">    <span class="comment">// todo</span></span><br><span class="line"> &#125;</span><br><span class="line"> __after() &#123;</span><br><span class="line">    <span class="comment">// todo</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>要点</strong>：</p>
+<ol>
+<li>Logic 和 Controller 的文件名应该相同。</li>
+<li>Logic 中进行数据校验时，会根据请求类型自动获取，也可以手动获取设置到数据的 <code>value</code> 属性上。</li>
+</ol>
+<h3 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h3><p>控制器负责处理用户请求的逻辑，每一个操作对应一个 Action。Controller 代码类似如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Base = <span class="built_in">require</span>(<span class="string">'./base.js'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">Base</span> </span>&#123;</span><br><span class="line">  __before() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Before user action.'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  indexAction() &#123;</span><br><span class="line">    <span class="keyword">this</span>.body = <span class="string">'hello world!'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  profileAction() &#123;</span><br><span class="line">    <span class="keyword">this</span>.body = <span class="string">'User profile!'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  __call() &#123;</span><br><span class="line">    <span class="comment">//如果相应的Action不存在则调用改方法</span></span><br><span class="line">    <span class="keyword">this</span>.body = <span class="string">'Not Found'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  __after() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'After user action.'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>访问 <code>/user</code> 或 <code>/user/index</code> 会执行 <code>indexAction</code>；访问 <code>/user/profile</code> 会执行 <code>profileAction</code>。</p>
+<p>在 controller 目录下创建子目录并添加 controller 可以进行多级匹配。例如：在 controller 目录下创建一个 user 目录并添加一个名为 login.js 的控制器，当访问 <code>/user/login</code> 时，会执行 login.js 中的 <code>indexAction</code>。</p>
+<p>Controller 里的处理顺序依次为 <code>__before</code>、<code>xxxAction</code>、<code>__after</code>，<code>return false</code> 可以提前结束请求。</p>
+<h3 id="View"><a href="#View" class="headerlink" title="View"></a>View</h3><p>ThinkJS 3.0 没有内置 View 功能，需要通过 Extend 和 Adapter 中的配置来实现，具体如何配置参考<a href="https://thinkjs.org/zh-cn/doc/3.0/view.html#toc-9ad" target="_blank" rel="noopener">官网文档</a>。</p>
+<p>配置了 Extend 和 Adapter 后，就可以在 Controller 里使用了：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">think</span>.<span class="title">Controller</span> </span>&#123;</span><br><span class="line">  indexAction()&#123;</span><br><span class="line">    <span class="keyword">this</span>.assign(<span class="string">'title'</span>, <span class="string">'thinkjs'</span>); <span class="comment">//给模板赋值</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 渲染模板，实际上调用了 this.reader() 方法获取渲染后的内容，然后将内容赋值到 ctx.body上。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.display();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在模板中可以使用 <code>assign</code> 方法添加的变量。同时，系统在渲染模板的时候，自动注入 controller、config、ctx 变量，以便于在模板里直接使用。</p>
+<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p>上面说到当访问 <code>/user/profile</code> 时，会执行 user 控制器中的 <code>profileAction</code>，这一过程由路由来完成。ThinkJS 使用 <code>think-router</code> 中间件。</p>
+<p>当 Controller 有子目录时，会优先匹配子 Controller，然后才匹配 action。</p>
+<p>支持在 <code>src/config/router.js</code> 中配置自定义路由规则，路由规则为一个二维数组，如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = [</span><br><span class="line">  [<span class="regexp">/libs\/(.*)/i</span>, <span class="string">'/libs/:1'</span>, <span class="string">'get'</span>],</span><br><span class="line">  [<span class="regexp">/fonts\/(.*)/i</span>, <span class="string">'/fonts/:1'</span>, <span class="string">'get,post'</span>],</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p>每一条路由规则也为一个数组，数组里面的项分别对应为：match、pathname、method、options：</p>
+<ul>
+<li>match {String | RegExp} pathname 匹配规则，可以是字符串或者正则。如果是字符串，那么会通过 path-to-regexp 模块转为正则。</li>
+<li>pathname {String} 匹配后映射后的 pathname，后续会根据这个映射的 pathname 解析出对应的 controller、action。</li>
+<li>method {String} 该条路由规则支持的请求类型，默认为所有。多个请求类型中间用逗号隔开，如：get,post。</li>
+<li>options {Object} 额外的选项，如：跳转时指定 statusCode。</li>
+</ul>
+<h3 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h3><p>Adapter 是一类功能的不同实现，这些实现提供一套相同的接口，例如：多种数据库、模板引擎。Adapter 一般是不能独立使用的，而是配合对应的扩展一起使用。</p>
+<p>Adapter 可以根据不同的运行环境设置不同的配置，例如：创建 <code>adapter.production.js</code> 文件指定生产环境下的适配器配置。</p>
+<p>除了引入外部的 Adapter 外，项目内也可以创建 Adapter 来使用。Adapter 文件放在 <code>src/adapter/</code> 目录下（多模块项目放在 src/common/adapter/），如：<code>src/adapter/cache/xcache.js</code>，表示加了一个名为 xcache 的 cache Adapter 类型，然后该文件实现 cache 类型一样的接口即可。</p>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>扩展在 <code>src/config/extend.js</code> 文件中配置，格式为数组，如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> view = <span class="built_in">require</span>(<span class="string">'think-view'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = [</span><br><span class="line">  view <span class="comment">//make application support view</span></span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p>支持自定义扩展，文件放在 <code>src/extend/</code> 目录下，下面是给 ctx 添加判断当前请求是不是手机访问的扩展的例子。</p>
+<p>首先在 <code>src/extend</code> 目录下新建一个 <code>context.js</code> 的文件，文件中写下如下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  get isMobile() &#123;</span><br><span class="line">    <span class="keyword">const</span> userAgent = <span class="keyword">this</span>.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">const</span> mList = [<span class="string">'iphone'</span>, <span class="string">'android'</span>];</span><br><span class="line">    <span class="keyword">return</span> mList.some(<span class="function"><span class="params">item</span> =&gt;</span> userAgent.indexOf(item) &gt; <span class="number">-1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就可以通过 <code>ctx.isMobile</code> 来判断是否是手机访问了。</p>
+<h3 id="异步-错误处理"><a href="#异步-错误处理" class="headerlink" title="异步/错误处理"></a>异步/错误处理</h3><p>这一部分主要利用了 ES2017 标准中引入的 async 函数。基本的用法与 async 函数的用法相同，没有太多的封装。</p>
+<p>由于 Node.js 原生的异步方法都是 callback 方式，为了方便的将 callback 接口封装为 Promise 接口，ThinkJS 提供了 <code>think.promisify</code> 用来快速的封装，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">const</span> readFile = think.promisify(fs.readFile, fs);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> parseFile = <span class="keyword">async</span> (filepath) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> content = <span class="keyword">await</span> readFile(filepath, <span class="string">'utf8'</span>); <span class="comment">// readFile 返回 Promise</span></span><br><span class="line">  doSomethingWithContent();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是，这个方法只能封装 <code>callback(err, data)</code> 形式的回调函数，否则只能手动封装。</p>
+<p>错误处理除了 <code>try/catch</code> 和 <code>then/catch</code> 之外，还提供了一个 <strong>trace</strong> 中间件来统一处理运行时的异常。</p>
+<h2 id="模型-数据库"><a href="#模型-数据库" class="headerlink" title="模型/数据库"></a>模型/数据库</h2><p>ThinkJS 默认没有提供模型功能，而是通过扩展的方式实现，对应的模块为 <strong>think-model</strong>。在 <code>src/config/extend.js</code>中添加如下配置即可：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> model = <span class="built_in">require</span>(<span class="string">'think-model'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = [</span><br><span class="line">  model(think.app) <span class="comment">// 让框架支持模型的功能</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>添加了模型扩展后，就可以通过 <code>think.model</code>、<code>ctx.model</code>、<code>controller.model</code>等进行使用。</p>
+<p>模型可以支持多种数据库，在 <code>scr/config/adapter.js</code> 中配置即可。如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mysql = <span class="built_in">require</span>(<span class="string">'think-model-mysql'</span>);</span><br><span class="line">exports.model = &#123;</span><br><span class="line">  type: <span class="string">'mysql'</span>,  <span class="comment">// 默认使用的类型，调用时可以指定参数切换</span></span><br><span class="line">  common: &#123; <span class="comment">// 通用配置</span></span><br><span class="line">    logConnect: isDev,  <span class="comment">// 是否打印数据库连接信息</span></span><br><span class="line">    logSql: isDev,  <span class="comment">// 是否打印 SQL 语句</span></span><br><span class="line">    logger: <span class="function"><span class="params">msg</span> =&gt;</span> think.logger.info(msg) <span class="comment">// 打印信息的 logger</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mysql: &#123;  <span class="comment">// mysql 配置</span></span><br><span class="line">    handle: mysql,</span><br><span class="line">    database: <span class="string">''</span>,</span><br><span class="line">    prefix: <span class="string">'think_'</span>,</span><br><span class="line">    encoding: <span class="string">'utf8'</span>,</span><br><span class="line">    host: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">    port: <span class="string">''</span>,</span><br><span class="line">    user: <span class="string">'root'</span>,</span><br><span class="line">    password: <span class="string">'root'</span>,</span><br><span class="line">    dateStrings: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  sqlite: &#123;  <span class="comment">// sqlite 配置</span></span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>在适配器中添加相关配置后，在使用模型时指定相应的类型即可。例如使用 sqlite 的配置：<code>const user = think.model(&#39;user&#39;, &#39;sqlite&#39;);</code></p>
+<p>模型文件创建在 <code>src/model</code> 目录下，继承模型基类 <code>think.Model</code>，model 代码类似如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/model/user.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">think</span>.<span class="title">Model</span> </span>&#123;</span><br><span class="line">  getList() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.field(<span class="string">'name'</span>).select();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义了模型后，通过 <code>const usreModel = think.model(&#39;user&#39;, &#39;sqlite&#39;)</code> 获取模型实例，然后就可以调用模型提供的方法 <code>usreModel.getList()</code>。</p>
+<p>think.Model 基类提供了丰富的方法进行 CRUD 操作，我们可以对这些方法进行封装，例如上面的例子。具体有哪些方法详见<a href="https://thinkjs.org/zh-cn/doc/3.0/relation_model.html#api" target="_blank" rel="noopener">官网文档</a>。</p>
+<p><strong>think-model</strong> 扩展主要用来支持关系型数据库，还提供了 <strong>think-mongo</strong> 扩展来支持 MongoDB，添加如下扩展即可。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mongo = <span class="built_in">require</span>(<span class="string">'think-mongo'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = [</span><br><span class="line">  mongo(think.app) <span class="comment">// 让框架支持模型的功能</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>添加扩展后，可以通过 <code>think.mongo</code>、<code>ctx.mongo</code> 等方法使用。</p>
+<p>MondoDB 数据库适配器的配置复用了关系型数据的配置。模型的定义和关系型数据库类似，只是继承的是 <code>think.mongo</code>。<a href="https://thinkjs.org/zh-cn/doc/3.0/mongo.html#api" target="_blank" rel="noopener">官方API</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+    <div>
+      <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">The End&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-heart"></i>&nbsp;&nbsp;&nbsp;&nbsp;Thank You</div>
+    
+</div>
+
+    </div>
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    He Zhou
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.whezh.com/2017/08/learn-thinkjs/" title="ThinkJS 3.0">http://www.whezh.com/2017/08/learn-thinkjs/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ThinkJS/" rel="tag"><i class="fa fa-tag"></i> ThinkJS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/software-install/" rel="next" title="常用软件安装">
+                <i class="fa fa-chevron-left"></i> 常用软件安装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/baidu-push/" rel="prev" title="Node.js 实现百度主动推送">
+                Node.js 实现百度主动推送 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDQ0Ny83MDAx"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="He Zhou" />
+          <p class="site-author-name" itemprop="name">He Zhou</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hezhii" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://codepen.io/hezhou" target="_blank" title="CodePen">
+                  
+                    <i class="fa fa-fw fa-codepen"></i>
+                  
+                    
+                      CodePen
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/hlvyang" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      微博
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人见解"><span class="nav-number">2.</span> <span class="nav-text">个人见解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始使用"><span class="nav-number">3.</span> <span class="nav-text">开始使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本用法"><span class="nav-number">4.</span> <span class="nav-text">基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">4.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上下文"><span class="nav-number">4.2.</span> <span class="nav-text">上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中间件"><span class="nav-number">4.3.</span> <span class="nav-text">中间件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Logic"><span class="nav-number">4.4.</span> <span class="nav-text">Logic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制器"><span class="nav-number">4.5.</span> <span class="nav-text">控制器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#View"><span class="nav-number">4.6.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由"><span class="nav-number">4.7.</span> <span class="nav-text">路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适配器"><span class="nav-number">4.8.</span> <span class="nav-text">适配器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展"><span class="nav-number">4.9.</span> <span class="nav-text">扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步-错误处理"><span class="nav-number">4.10.</span> <span class="nav-text">异步/错误处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型-数据库"><span class="nav-number">5.</span> <span class="nav-text">模型/数据库</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">He Zhou</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
+
+  <span class="post-meta-divider">|</span>
+  <div class="coding-pages">Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("4tpJ87MqbpFnyBs09jyC6Rpi-gzGzoHsz", "bH4Hy7hHtAfIvFOcTij2My4S");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

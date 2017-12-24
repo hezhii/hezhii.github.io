@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+    
+  <url>
+    <loc>http://www.whezh.com/2017/08/baidu-collect-github/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>解决博客搭建在GitHub上无法被百度收录的问题</title>
+        <pubTime>2017-08-13T15:31:40.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>GitHub</tag>
+         
+        <tag>BaiduSpider</tag>
+         
+        <tag>SEO</tag>
+         
+         
+           
+             
+              <breadCrumb title="航海日志" url="http://www.whezh.com/categories/%E8%88%AA%E6%B5%B7%E6%97%A5%E5%BF%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/08/build-blog/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>博客搭建过程</title>
+        <pubTime>2017-08-07T15:02:01.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>GitHub</tag>
+         
+        <tag>Travis CI</tag>
+         
+         
+           
+             
+              <breadCrumb title="航海日志" url="http://www.whezh.com/categories/%E8%88%AA%E6%B5%B7%E6%97%A5%E5%BF%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/11/certification/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>CA 证书</title>
+        <pubTime>2017-11-13T08:34:35.000Z</pubTime>
+        
+        <tag>HTTPS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="Web 通信" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/Web-%E9%80%9A%E4%BF%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/09/cors/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>跨域 POST 请求之 CROS</title>
+        <pubTime>2017-09-16T12:00:57.000Z</pubTime>
+        
+        <tag>CROS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="Web 通信" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/Web-%E9%80%9A%E4%BF%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/09/database-transaction/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>数据库事务及锁机制</title>
+        <pubTime>2017-09-21T15:41:26.000Z</pubTime>
+        
+        <tag>事务</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="数据库" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/09/encoded/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>彻底弄懂 Unicode 编码</title>
+        <pubTime>2017-09-02T13:29:08.000Z</pubTime>
+        
+        <tag>Unicode</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/08/git-submodule-webstorm/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>如何在WebStorm中使用Git Submodule</title>
+        <pubTime>2017-08-20T09:30:47.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+        <tag>WebStorm</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/11/glup/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>Gulp 初体验</title>
+        <pubTime>2017-11-02T05:40:15.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>Gulp</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/11/gulp-istanbul-es6/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>关于 gulp-istanbul 无法解析 async/await 的问题</title>
+        <pubTime>2017-11-03T08:45:29.000Z</pubTime>
+        
+        <tag>Gulp</tag>
+         
+        <tag>Istanbul</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/11/https/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>我理解的 HTTPS</title>
+        <pubTime>2017-11-09T14:02:04.000Z</pubTime>
+        
+        <tag>HTTPS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="Web 通信" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/Web-%E9%80%9A%E4%BF%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/08/learn-express/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>Express 4.0</title>
+        <pubTime>2017-08-24T10:42:33.000Z</pubTime>
+        
+        <tag>Express</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="Node.js" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/Node-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/09/baidu-push/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>Node.js 实现百度主动推送</title>
+        <pubTime>2017-09-01T03:26:15.000Z</pubTime>
+        
+        <tag>SEO</tag>
+         
+        <tag>macOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="Node.js" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/Node-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/08/learn-thinkjs/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>ThinkJS 3.0</title>
+        <pubTime>2017-08-30T09:54:51.000Z</pubTime>
+        
+        <tag>ThinkJS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="Node.js" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/Node-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/08/my-first-blog/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>从此，每天不一样</title>
+        <pubTime>2017-08-06T08:12:53.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="心灵鸡汤" url="http://www.whezh.com/categories/%E5%BF%83%E7%81%B5%E9%B8%A1%E6%B1%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/10/nodejs-unit/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>Node.js 单元测试</title>
+        <pubTime>2017-10-16T14:10:19.000Z</pubTime>
+        
+        <tag>Istanbul</tag>
+         
+        <tag>Mocha</tag>
+         
+        <tag>Chai</tag>
+         
+        <tag>Sinon</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="Node.js" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/Node-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/09/note-react/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>React 学习笔记</title>
+        <pubTime>2017-09-06T11:20:06.000Z</pubTime>
+        
+        <tag>React</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="前端" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/08/notification/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>HTML5 Notification</title>
+        <pubTime>2017-08-09T14:40:19.000Z</pubTime>
+        
+        <tag>HTML5</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="前端" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/10/sequelize-usage/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>Sequelize 基本用法</title>
+        <pubTime>2017-10-02T04:57:15.000Z</pubTime>
+        
+        <tag>ORM</tag>
+         
+        <tag>Sequelize</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="Node.js" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/Node-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/08/software-install/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>常用软件安装</title>
+        <pubTime>2017-08-27T12:09:16.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="收藏" url="http://www.whezh.com/categories/%E6%94%B6%E8%97%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/09/solution/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>问题汇总</title>
+        <pubTime>2017-09-20T05:26:45.000Z</pubTime>
+        
+        <tag>WebStorm</tag>
+         
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="收藏" url="http://www.whezh.com/categories/%E6%94%B6%E8%97%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.whezh.com/2017/08/use-chrome-theme-background/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>博客中使用Chrome主题中的背景图片</title>
+        <pubTime>2017-08-22T12:35:33.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>CSS</tag>
+         
+        <tag>Chrome</tag>
+         
+         
+           
+             
+              <breadCrumb title="航海日志" url="http://www.whezh.com/categories/%E8%88%AA%E6%B5%B7%E6%97%A5%E5%BF%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://www.whezh.com/2017/08/learn-polymer/</loc>
+    <lastmod>2017-12-24T13:06:04.092Z</lastmod>
+    <data>
+        <display>
+        <title>Polymer 2.0</title>
+        <pubTime>2017-08-08T15:05:20.000Z</pubTime>
+        
+        <tag>Polymer</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="前端" url="http://www.whezh.com/categories/%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>
